@@ -1,0 +1,34 @@
+<textarea id="log" rows="20" cols="40"></textarea>
+<button id="button">Click Me!</button>
+<script type="text/javascript">
+  var log = document.getElementById('log');
+  var button = document.getElementById('button');
+
+  let timeToWait = 1;
+
+  button.onclick = function () {
+    if (timeToWait < 10) {
+      log.value += 'adding a second\n';
+      timeToWait++;
+    }
+  };
+
+  setTimeout(() => {
+    const s = new Date().getSeconds();
+
+    setTimeout(function () {
+      log.value += ("Ran after " + (new Date().getSeconds() - s) + " seconds\n");
+    }, 500);
+
+    while (true) {
+      if (new Date().getSeconds() - s >= timeToWait) {
+        button.click();
+      }
+
+      if (new Date().getSeconds() - s >= timeToWait + 1) {
+        log.value += ("Good, looped for " + (timeToWait + 1) + " seconds\n");
+        break;
+      }
+    }
+  }, 1000)
+</script>
