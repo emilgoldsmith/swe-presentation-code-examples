@@ -1,5 +1,5 @@
 <textarea id="log" rows="20" cols="40"></textarea>
-<button id="button">Click Me!</button>
+<button id="button">I'll be clicked programatically</button>
 <script type="text/javascript">
   var log = document.getElementById('log');
   var button = document.getElementById('button');
@@ -14,6 +14,7 @@
   };
 
   setTimeout(() => {
+    log.value += "Starting our loop\n";
     const s = new Date().getSeconds();
 
     setTimeout(function () {
@@ -30,5 +31,6 @@
         break;
       }
     }
-  }, 1000)
+  })
+  log.value += "Initial function done\n";
 </script>
