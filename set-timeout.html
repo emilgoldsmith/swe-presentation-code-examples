@@ -1,0 +1,18 @@
+<textarea id="log" rows="20" cols="40"></textarea>
+<button id="button">Click Me!</button>
+<script type="text/javascript">
+  var log = document.getElementById('log');
+
+  const s = new Date().getSeconds();
+
+  setTimeout(function () {
+    log.value += ("Ran after " + (new Date().getSeconds() - s) + " seconds\n");
+  }, 500);
+
+  while (true) {
+    if (new Date().getSeconds() - s >= 2) {
+      log.value += ("Good, looped for 2 seconds\n");
+      break;
+    }
+  }
+</script>
