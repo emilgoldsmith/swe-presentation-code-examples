@@ -2,7 +2,7 @@ console.log("this is the start");
 
 setTimeout(function cb() {
   console.log("this is a msg from call back");
-});
+}, 0);
 
 console.log("this is just a message");
 
